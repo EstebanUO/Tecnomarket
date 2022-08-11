@@ -53,8 +53,12 @@
                 {% endif %}
             </td>
             <td>
+                {% if perms.app.change_producto %}
                 <a href="{% url 'modificar_producto' p.id %}" class="btn btn-info btn-sm">Modificar</a>
+                {% endif %}
+                {% if perms.app.delete_producto %}
                 <a href="#" onclick="eliminarProducto({{ p.id }})" class="btn btn-danger btn-sm">Eliminar</a>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}
