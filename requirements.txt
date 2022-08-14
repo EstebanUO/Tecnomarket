@@ -3,3 +3,4 @@ pillow
 django-admin-interface
 django-cryspy-forms
 django-rest-framework
+social-auth-app-django

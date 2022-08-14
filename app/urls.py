@@ -1,7 +1,7 @@
 from xml.etree.ElementInclude import include
 from django.urls import path, include
 from .views import MarcaViewset, contactos, home, contactos, galeria, agregar_producto, \
-    listar_productos, modificar_producto, eliminar_producto, registro, ProductoViewset
+    listar_productos, modificar_producto, eliminar_producto, registro, ProductoViewset, error_facebook
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -17,5 +17,6 @@ urlpatterns = [
     path('modificar-producto/<id>/', modificar_producto, name='modificar_producto'),
     path('eliminar-producto/<id>/', eliminar_producto, name='eliminar_producto'),
     path('registro/', registro, name='registro'),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('error-fecabook/', error_facebook, name='error_facebook'),
 ]
